@@ -1,214 +1,340 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "CFBundleDisplayName" : {
-      "comment" : "Bundle display name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleDisplayName": {
+      "comment": "Bundle display name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "VoiceInk"
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "VoiceInk"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         }
       }
     },
-    "CFBundleName" : {
-      "comment" : "Bundle name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+    "CFBundleName": {
+      "comment": "Bundle name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "VoiceInk"
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "VoiceInk"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk"
           }
         }
       }
     },
-    "CFBundleTypeName" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Audio-/Videodatei"
+    "CFBundleTypeName": {
+      "extractionState": "stale",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio-/Videodatei"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Audio/Video File"
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Audio/Video File"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "音频/视频文件"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音频/视频文件"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fichier audio/vidéo"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichier audio/vidéo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Аудио/Видео файл"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Аудіо/Відео файл"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio/Video soubor"
           }
         }
       }
     },
-    "NSAppleEventsUsageDescription" : {
-      "comment" : "Privacy - AppleEvents Sending Usage Description",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk muss mit Ihrem Browser interagieren, um die aktuelle Website zu erkennen und website-spezifische Konfigurationen anzuwenden."
+    "NSAppleEventsUsageDescription": {
+      "comment": "Privacy - AppleEvents Sending Usage Description",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk muss mit Ihrem Browser interagieren, um die aktuelle Website zu erkennen und website-spezifische Konfigurationen anzuwenden."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "VoiceInk needs to interact with your browser to detect the current website for applying website-specific configurations."
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "VoiceInk needs to interact with your browser to detect the current website for applying website-specific configurations."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk 需要与浏览器交互以检测当前网站，从而应用针对特定网站的配置。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk 需要与浏览器交互以检测当前网站，从而应用针对特定网站的配置。"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk doit interagir avec votre navigateur pour détecter le site Web actuel afin d'appliquer des configurations spécifiques au site Web."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk doit interagir avec votre navigateur pour détecter le site Web actuel afin d'appliquer des configurations spécifiques au site Web."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk взаимодействует с браузером для определения текущего веб-сайта и применения специфических настроек."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk взаємодіє з браузером для визначення поточного веб-сайту та застосування індивідуальних налаштувань."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk potřebuje komunikovat s vaším prohlížečem pro zjištění aktuální webové stránky a použití specifických nastavení."
           }
         }
       }
     },
-    "NSHumanReadableCopyright" : {
-      "comment" : "Copyright (human-readable)",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
+    "NSHumanReadableCopyright": {
+      "comment": "Copyright (human-readable)",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": ""
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription" : {
-      "comment" : "Privacy - Microphone Usage Description",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk benötigt Zugriff auf Ihr Mikrofon, um Audio für die Transkription aufzunehmen."
+    "NSMicrophoneUsageDescription": {
+      "comment": "Privacy - Microphone Usage Description",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk benötigt Zugriff auf Ihr Mikrofon, um Audio für die Transkription aufzunehmen."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "VoiceInk needs access to your microphone to record audio for transcription."
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "VoiceInk needs access to your microphone to record audio for transcription."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk 需要访问麦克风以录制音频用于转录。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk 需要访问麦克风以录制音频用于转录。"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk a besoin d'accéder à votre microphone pour enregistrer l'audio à des fins de transcription."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk a besoin d'accéder à votre microphone pour enregistrer l'audio à des fins de transcription."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk требуется доступ к микрофону для записи аудио и распознавания речи."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk потрібен доступ до мікрофона для запису аудіо та розпізнавання мовлення."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk potřebuje přístup k mikrofonu pro nahrávání zvuku k přepisu."
           }
         }
       }
     },
-    "NSScreenCaptureUsageDescription" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk benötigt Zugriff auf die Bildschirmaufnahme, um Kontext von Ihrem Bildschirm für eine höhere Transkriptionsgenauigkeit zu erfassen."
+    "NSScreenCaptureUsageDescription": {
+      "extractionState": "stale",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk benötigt Zugriff auf die Bildschirmaufnahme, um Kontext von Ihrem Bildschirm für eine höhere Transkriptionsgenauigkeit zu erfassen."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "VoiceInk needs screen recording access to understand context from your screen for improved transcription accuracy."
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "VoiceInk needs screen recording access to understand context from your screen for improved transcription accuracy."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk 需要屏幕录制权限以理解屏幕上的上下文，提高转录准确性。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk 需要屏幕录制权限以理解屏幕上的上下文，提高转录准确性。"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VoiceInk a besoin d'un accès à l'enregistrement d'écran pour comprendre le contexte de votre écran afin d'améliorer la précision de la transcription."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk a besoin d'un accès à l'enregistrement d'écran pour comprendre le contexte de votre écran afin d'améliorer la précision de la transcription."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk требуется доступ к снимкам экрана для анализа контекста и повышения точности распознавания."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk потрібен доступ до запису екрана для розуміння контексту та підвищення точності розпізнавання."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceInk potřebuje přístup k záznamu obrazovky pro pochopení kontextu pro vyšší přesnost přepisu."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
