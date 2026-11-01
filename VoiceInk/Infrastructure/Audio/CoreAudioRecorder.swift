@@ -1159,20 +1159,22 @@ final class CoreAudioRecorder: @unchecked Sendable {
             mElement: kAudioObjectPropertyElementMain
         )
 
-        var propertySize = UInt32(MemoryLayout<CFString>.size)
-        var property = "" as CFString
+        var property: CFString?
+        var propertySize = UInt32(MemoryLayout<CFString?>.size)
 
-        let status = AudioObjectGetPropertyData(
-            deviceID,
-            &address,
-            0,
-            nil,
-            &propertySize,
-            &property
-        )
+        let status = withUnsafeMutablePointer(to: &property) { ptr in
+            AudioObjectGetPropertyData(
+                deviceID,
+                &address,
+                0,
+                nil,
+                &propertySize,
+                ptr
+            )
+        }
 
         if status == noErr {
-            return property as String
+            return property as? String
         }
         return nil
     }

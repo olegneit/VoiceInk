@@ -6,10 +6,10 @@ struct AudioVisualizer: View {
     let isActive: Bool
 
     private let barCount = 15
-    private let barWidth: CGFloat = 3
-    private let barSpacing: CGFloat = 2
-    private let minHeight: CGFloat = 4
-    private let maxHeight: CGFloat = 28
+    private let barWidth: CGFloat = 3.2
+    private let barSpacing: CGFloat = 2.5
+    private let minHeight: CGFloat = 4.0
+    private let maxHeight: CGFloat = 26.0
 
     private let phases: [Double]
 
@@ -17,7 +17,19 @@ struct AudioVisualizer: View {
         self.audioMeterProvider = audioMeterProvider
         self.color = color
         self.isActive = isActive
-        self.phases = (0..<barCount).map { Double($0) * 0.4 }
+        self.phases = (0..<barCount).map { Double($0) * 0.45 }
+    }
+
+    private var barGradient: LinearGradient {
+        LinearGradient(
+            colors: [
+                Color(red: 0.40, green: 0.82, blue: 1.00),
+                color,
+                Color(red: 0.72, green: 0.55, blue: 1.00)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
     }
 
     var body: some View {
@@ -26,8 +38,9 @@ struct AudioVisualizer: View {
 
             HStack(spacing: barSpacing) {
                 ForEach(0..<barCount, id: \.self) { index in
-                    RoundedRectangle(cornerRadius: barWidth / 2)
-                        .fill(color.opacity(0.85))
+                    Capsule()
+                        .fill(barGradient)
+                        .shadow(color: Color(red: 0.40, green: 0.75, blue: 1.0).opacity(0.35), radius: 2.5, x: 0, y: 0)
                         .frame(
                             width: barWidth,
                             height: barHeight(
@@ -45,29 +58,59 @@ struct AudioVisualizer: View {
         guard isActive else { return minHeight }
 
         let time = date.timeIntervalSince1970
-        let amplitude = max(0, min(1, pow(audioMeter.averagePower, 0.7)))  // boosted for visibility
-        let wave = sin(time * 8 + phases[index]) * 0.5 + 0.5
-        let centerDistance = abs(Double(index) - Double(barCount) / 2) / Double(barCount / 2)
-        let centerBoost = 1.0 - (centerDistance * 0.4)
+        let center = Double(barCount - 1) / 2.0
+        let normalizedDist = (Double(index) - center) / center
+        let bellCurve = exp(-2.2 * normalizedDist * normalizedDist)
 
-        return max(minHeight, minHeight + CGFloat(amplitude * wave * centerBoost) * (maxHeight - minHeight))
+        let wave1 = sin(time * 5.2 + phases[index])
+        let wave2 = cos(time * 3.4 - phases[index] * 0.8)
+        let harmonicWave = (wave1 * 0.65 + wave2 * 0.35) * 0.5 + 0.5
+
+        let rawPower = Double(max(0, min(1, audioMeter.averagePower)))
+        let power = pow(rawPower, 0.65)
+
+        let baseline = 0.14
+        let dynamicEnergy = baseline + power * 0.86
+
+        let heightFraction = bellCurve * (dynamicEnergy * 0.32 + dynamicEnergy * harmonicWave * 0.68)
+        return max(minHeight, minHeight + CGFloat(heightFraction) * (maxHeight - minHeight))
     }
 }
 
-// Flat bars shown when the recorder is idle (no audio input)
+// Fluid breathing bars shown when the recorder is idle (waiting for input)
 struct StaticVisualizer: View {
     private let barCount = 15
-    private let barWidth: CGFloat = 3
-    private let barHeight: CGFloat = 4
-    private let barSpacing: CGFloat = 2
+    private let barWidth: CGFloat = 3.2
+    private let barSpacing: CGFloat = 2.5
+    private let minHeight: CGFloat = 4.0
+    private let maxHeight: CGFloat = 8.0
     let color: Color
 
     var body: some View {
-        HStack(spacing: barSpacing) {
-            ForEach(0..<barCount, id: \.self) { _ in
-                RoundedRectangle(cornerRadius: barWidth / 2)
-                    .fill(color.opacity(0.5))
-                    .frame(width: barWidth, height: barHeight)
+        TimelineView(.animation(minimumInterval: 0.03)) { context in
+            let time = context.date.timeIntervalSince1970
+            HStack(spacing: barSpacing) {
+                ForEach(0..<barCount, id: \.self) { index in
+                    let center = Double(barCount - 1) / 2.0
+                    let dist = abs(Double(index) - center) / center
+                    let bell = exp(-1.8 * dist * dist)
+                    let wave = sin(time * 2.2 + Double(index) * 0.42) * 0.5 + 0.5
+                    let height = minHeight + CGFloat(bell * wave) * (maxHeight - minHeight)
+
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 0.45, green: 0.82, blue: 1.00).opacity(0.65),
+                                    color.opacity(0.75),
+                                    Color(red: 0.72, green: 0.55, blue: 1.00).opacity(0.65)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                        )
+                        .frame(width: barWidth, height: height)
+                }
             }
         }
     }

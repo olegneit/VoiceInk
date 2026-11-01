@@ -70,11 +70,15 @@ struct MiniRecorderView<S: RecorderStateProvider & ObservableObject>: View {
         .frame(height: controlBarHeight)
     }
 
+    private var currentCornerRadius: CGFloat {
+        hasLiveTranscript || hasAssistantResponse ? expandedCornerRadius : compactCornerRadius
+    }
+
     private var transcriptSection: some View {
         VStack(spacing: 0) {
             if hasLiveTranscript {
                 LiveTranscriptView(text: stateProvider.partialTranscript)
-                Divider().background(Color.white.opacity(0.15))
+                Divider().overlay(Color.white.opacity(0.12))
             }
         }
     }
@@ -87,19 +91,50 @@ struct MiniRecorderView<S: RecorderStateProvider & ObservableObject>: View {
                     liveFollowUpText: liveAssistantFollowUpText,
                     onSend: onAssistantFollowUp
                 )
-                Divider().background(Color.white.opacity(0.15))
+                Divider().overlay(Color.white.opacity(0.12))
             } else {
                 transcriptSection
             }
             controlBar
         }
         .frame(width: hasAssistantResponse ? assistantWidth : (hasLiveTranscript ? expandedWidth : compactWidth))
-        .background(Color.black)
+        .background {
+            ZStack {
+                VisualEffectView(material: .hudWindow, blendingMode: .behindWindow)
+                LinearGradient(
+                    colors: [
+                        Color(red: 0.12, green: 0.12, blue: 0.15).opacity(0.88),
+                        Color(red: 0.07, green: 0.07, blue: 0.09).opacity(0.94)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            }
+        }
         .clipShape(
             RoundedRectangle(
-                cornerRadius: hasLiveTranscript || hasAssistantResponse ? expandedCornerRadius : compactCornerRadius,
-                style: .continuous)
+                cornerRadius: currentCornerRadius,
+                style: .continuous
+            )
         )
+        .overlay(
+            RoundedRectangle(
+                cornerRadius: currentCornerRadius,
+                style: .continuous
+            )
+            .strokeBorder(
+                LinearGradient(
+                    colors: [
+                        Color.white.opacity(0.20),
+                        Color.white.opacity(0.06)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                ),
+                lineWidth: 1
+            )
+        )
+        .shadow(color: Color.black.opacity(0.40), radius: 18, x: 0, y: 8)
         .animation(.easeInOut(duration: 0.3), value: hasLiveTranscript)
         .animation(.easeInOut(duration: 0.3), value: hasAssistantResponse)
         .gesture(WindowDragGesture())

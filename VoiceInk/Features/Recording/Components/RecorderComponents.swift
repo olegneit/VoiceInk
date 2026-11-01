@@ -84,6 +84,7 @@ struct RecorderRecordButton: View {
         }
         .frame(width: 21, height: 21)
         .contentShape(Circle())
+        .shadow(color: visualState == .recording ? Color.red.opacity(0.45) : .clear, radius: 4, x: 0, y: 0)
         .animation(.easeOut(duration: 0.16), value: visualState)
     }
 
@@ -309,11 +310,11 @@ struct LiveTranscriptView: View {
         ScrollViewReader { proxy in
             ScrollView(.vertical, showsIndicators: false) {
                 Text(text)
-                    .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.8))
+                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .foregroundColor(.white.opacity(0.92))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 8)
                     .id("bottom")
             }
             .frame(height: 56)
@@ -321,7 +322,7 @@ struct LiveTranscriptView: View {
                 LinearGradient(
                     stops: [
                         .init(color: .clear, location: 0.0),
-                        .init(color: .black, location: 0.18),
+                        .init(color: .black, location: 0.15),
                         .init(color: .black, location: 1.0),
                     ],
                     startPoint: .top,
