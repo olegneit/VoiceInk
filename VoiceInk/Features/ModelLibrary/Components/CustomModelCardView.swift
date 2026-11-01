@@ -58,7 +58,7 @@ struct CustomModelCardView: View {
     }
 
     private var descriptionSection: some View {
-        Text(model.description)
+        Text(LocalizedStringKey(model.description))
             .font(.system(size: 11))
             .foregroundColor(Color(.secondaryLabelColor))
             .lineLimit(2)

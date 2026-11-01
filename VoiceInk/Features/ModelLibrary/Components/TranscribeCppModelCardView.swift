@@ -36,7 +36,7 @@ struct TranscribeCppModelCardView: View {
                 .foregroundColor(Color(.secondaryLabelColor))
                 .lineLimit(1)
 
-                Text(model.description)
+                Text(LocalizedStringKey(model.description))
                     .font(.system(size: 11))
                     .foregroundColor(Color(.secondaryLabelColor))
                     .lineLimit(2)
